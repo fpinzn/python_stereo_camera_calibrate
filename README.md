@@ -40,7 +40,7 @@ calib.py receives the videos in this order:
 `python calib.py calibration_settings.yaml videos/03-tobias-front_1.mp4 videos/03-tobias-side_1.mp4`
 
 That returns the calibration results in console like this:
-
+```
 --- Calibration Parameters ---
 Camera0 Intrinsic Matrix:
  [[229.75032642   0.         200.44588524]
@@ -63,7 +63,7 @@ Stereo Translation Vector (Camera0 -> Camera1):
  [ -20.27274023]
  [  14.12344011]]
 ------------------------------
-
+```
 From memory, the RMSE (Root Mean Square Error) was between 3.something and 4.something. Which according to the dudes blogpost is way too high.
 
 Using that and Chat GPT the extract_video_landmarks.sh file was created, it creates a swift script called ‘pose-estimation-video.swift’ which compiles and executes to create front_video.json and side_video.json, the last step is to join both files in a csv called video_landmarks.csv
